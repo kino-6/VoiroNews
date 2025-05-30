@@ -2,7 +2,9 @@ import argparse
 import json
 import os
 from NewsAPIManager import NewsAPIManager
-from voiceroid_controller import VoiceroidController
+from tts_controller import TTSStrategy
+from voiceroid2_controller import VoiceroidController
+from aivoice2_controller import AIVoice2Controller
 
 
 def read_shift_jis_txt(file_path):
@@ -37,14 +39,15 @@ def main():
     manager = NewsAPIManager(news_json_path)
     news_file = manager.get_news(args.keyword)
 
-    # ニュース本文抽出
-    print(f"{news_file=}")
+    # # ニュース本文抽出
+    # print(f"{news_file=}")
     text = read_shift_jis_txt(news_file)
-    print(f"{text=}")
+    # print(f"{text=}")
 
     # 読み上げ
-    vc = VoiceroidController()
-    vc.speak(text)
+    tts_engine: TTSStrategy = AIVoice2Controller()
+    # tts_engine.speak("テストやで")
+    tts_engine.speak(text)
 
 
 if __name__ == "__main__":

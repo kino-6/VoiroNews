@@ -4,6 +4,10 @@ beautifulsoup4
 feedparser
 pywinauto
 pywin32
+pythonnet
+pyautogui
+opencv-python
+pygetwindow
 
 # dev
 black
