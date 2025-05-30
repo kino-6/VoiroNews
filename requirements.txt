@@ -1,0 +1,9 @@
+requests
+pandas
+beautifulsoup4
+feedparser
+pywinauto
+pywin32
+
+# dev
+black
