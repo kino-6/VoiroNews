@@ -92,7 +92,7 @@ class AIVoice2Controller(TTSStrategy):
 
         # Ctrl+V で貼り付け
         pyautogui.hotkey("ctrl", "v")
-        time.sleep(0.2)
+        time.sleep(0.5)
 
         # 再生ボタンを押す
         self.click_image(self.play_image_path)
